@@ -26,7 +26,7 @@ function ItemCard() {
                         </div>
                         <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
                             <button
-                                class="bg-primary h-12 border-none px-6 mt-4 py-2 transition ease-in duration-200 rounded-lg hover:bg-gray-800 hover:text-white border-2 focus:outline-none hover:bg-blue hover:text-primary max-md:w-full">
+                                class="bg-primary h-12 border-none px-6 mt-4 py-2 transition ease-in duration-200 rounded-lg hover:bg-gray-800 border-2 focus:outline-none hover:bg-blue hover:text-primary max-md:w-full">
                                     Update
                             </button>
                             <button

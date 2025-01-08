@@ -4,7 +4,7 @@ import React from 'react'
 const HomePage = () => {
   return (
     <>
-      <div className="flex justify-center items-center my-4 text-gray hidden">
+      <div className="flex justify-center items-center my-4 text-gray">
         <p className="text-gray-500 text-lg">No Products Found.</p>
         <a href="/create" className="font-bold text-lg ml-2 underline text-bold text-accent hover:text-blue">Create a Product?</a>
       </div>

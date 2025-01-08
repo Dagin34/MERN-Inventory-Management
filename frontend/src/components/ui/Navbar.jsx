@@ -28,7 +28,7 @@ const Navbar = () => {
                 <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" href="#">Collections</a></li>
                 <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" href="#">Contact Us</a></li>
               </ul>
-              <div className="heart hidden xl:flex items-center space-x-5 items-center">
+              <div className="heart hidden xl:flex items-center space-x-5">
                 <button onClick={toggleDarkMode} className="w-6 h-6 hover:bg-accent dark:hover:bg-accent bg-white dark:bg-primary rounded-lg font-bold">
                 </button>
                 <a className="flex items-center hover:text-gray-200 dark:text-primary" href="#">
