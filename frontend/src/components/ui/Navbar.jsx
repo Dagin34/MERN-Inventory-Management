@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { ColorModeProvider } from './color-mode'
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = React.useState(true);
+  const navigate = useNavigate();
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -23,10 +25,10 @@ const Navbar = () => {
                 Desired Shopping.
               </a>
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" href="#">Home</a></li>
-                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" href="#">Create</a></li>
-                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" href="#">Collections</a></li>
-                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" href="#">Contact Us</a></li>
+                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" onClick={() => {navigate("/")}}>Home</a></li>
+                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" onClick={() => {navigate("/create")}}>Create</a></li>
+                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" href="">Collections</a></li>
+                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent" href="">Contact Us</a></li>
               </ul>
               <div className="heart hidden xl:flex items-center space-x-5">
                 <button onClick={toggleDarkMode} className="w-6 h-6 hover:bg-accent dark:hover:bg-accent bg-white dark:bg-primary rounded-lg font-bold">
