@@ -13,25 +13,25 @@ const CreatePage = ({ name: initialName, description: initialDescription, price:
     <>
       <div className='w-screen h-full text-center'>
         <section className="flex justify-center items-start h-screen bg-gray-100">
-          <div className="max-w-md w-full mt-12 bg-white dark:bg-secondary rounded-xl p-6 space-y-4">
+          <div className="max-w-md w-full mt-12 dark:bg-white bg-secondary rounded-xl p-6 space-y-4 shadow-2xl ">
             <div className="mb-4">
               <p className="text-accent font-black text-2xl text-center">Update Item</p>
-              <h2 className="text-md font-normal text-sm dark:text-light-gray text-secondary">Enter information below</h2>
+              <h2 className="text-md font-normal text-sm dark:text-gray text-light-gray">Enter information below</h2>
             </div>
             <div>
-              <input className="w-full p-4 text-md dark:bg-primary focus:outline-none rounded-lg text-secondary" type="text" placeholder="Shoes Name" value={name} onChange={(e) => setName(e.target.value)} />
+              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Shoes Name" value={name} onChange={(e) => setName(e.target.value)} />
             </div>
             <div>
-              <input className="w-full p-4 text-md dark:bg-primary focus:outline-none rounded-lg" type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
             </div>
             <div>
-              <input className="w-full p-4 text-md dark:bg-primary focus:outline-none rounded-lg" type="text" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
+              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
             </div>
             <div>
-              <input className="w-full p-4 text-md dark:bg-primary focus:outline-none rounded-lg" type="text" placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />
+              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />
             </div>
             <div>
-              <button className="w-full py-4 rounded text-sm font-bold transition duration-200 border-[1px] border-accent hover:bg-accent">Update</button>
+              <button className="w-full py-4 rounded text-sm font-bold transition duration-200 border-[1px] border-accent bg-accent dark:bg-accent hover:bg-primary dark:hover:bg-secondary">Update</button>
             </div>
 
           </div>
