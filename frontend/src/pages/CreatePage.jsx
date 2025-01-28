@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import '../index.css'
 import { useProductStore } from '../store/product';
+import avatar from '../components/Navbar';
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
@@ -69,6 +70,7 @@ const CreatePage = () => {
                 onClick={handleAddProduct}>
                 Add Product
               </button>
+              <avatar />
             </div>
 
           </div>

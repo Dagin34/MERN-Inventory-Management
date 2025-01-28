@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import CreatePage from './pages/CreatePage'
-import Navbar from './components/ui/Navbar'
+import Navbar from './components/Navbar'
 
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <div className='bg-primary text-white dark:bg-white'>
+      <div className='bg-primary text-white dark:bg-white h-screen'>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -25,12 +25,5 @@ function App() {
     </>
   )
 }
-
-{/* <Button>Button</Button>
-<Button loading>Button</Button>
-<Button loading loadingText='Loading...'>Button</Button>
-<Button disabled>Button</Button>
-<Button disabled loading>Button</Button>
-<Button disabled loading loadingText='Loading...'>Button</Button> */}
 
 export default App
