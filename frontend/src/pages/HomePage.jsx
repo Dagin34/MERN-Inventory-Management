@@ -2,8 +2,10 @@ import ItemCard from '../components/ui/ItemCard'
 import React from 'react'
 import AirMax80 from '../assets/images/AirMax80.jpg'
 import NikeLowDunk from '../assets/images/Nike Low Dunks.jpeg'
+// import { useProductStore } from '../store/product'
 
 const HomePage = () => {
+  // const products = useProductStore();
 
   const products = [
     {
