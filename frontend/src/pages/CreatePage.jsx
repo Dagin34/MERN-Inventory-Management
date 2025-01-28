@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import '../index.css'
 
-const CreatePage = ({ name: initialName, description: initialDescription, price: initialPrice, image: initialImage }) => {
-  const [name, setName] = useState(initialName || "");
-  const [description, setDescription] = useState(initialDescription || "");
-  const [price, setPrice] = useState(initialPrice || "");
-  const [image, setImage] = useState(initialImage || "");
+const CreatePage = () => {
+
+  const location = useLocation();
+  const { name, description, price, image } = location.state || {};
 
   console.log(name, description, price, image);
+  // console.log(itemName, itemDescription, itemPrice, itemImage);
+
 
   return (
     <>
@@ -19,19 +21,21 @@ const CreatePage = ({ name: initialName, description: initialDescription, price:
               <h2 className="text-md font-normal text-sm dark:text-gray text-light-gray">Enter information below</h2>
             </div>
             <div>
-              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Shoes Name" value={name} onChange={(e) => setName(e.target.value)} />
+              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Shoes Name" defaultValue={name} />
             </div>
             <div>
-              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Description" defaultValue={description} />
             </div>
             <div>
-              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
+              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Price" defaultValue={price} />
             </div>
             <div>
-              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />
+              <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary" type="text" placeholder="Image URL" defaultValue={image} />
             </div>
             <div>
-              <button className="w-full py-4 rounded text-sm font-bold transition duration-200 border-[1px] border-accent bg-accent dark:bg-accent hover:bg-primary dark:hover:bg-secondary">Update</button>
+              <button className="w-full py-4 rounded text-sm font-bold transition duration-200 border-[1px] border-accent bg-accent dark:bg-accent hover:bg-primary dark:hover:bg-secondary" onClick={updateButton}>
+                Update
+              </button>
             </div>
 
           </div>
@@ -39,6 +43,11 @@ const CreatePage = ({ name: initialName, description: initialDescription, price:
       </div>
     </>
   )
+
+  function updateButton() {
+    console.log('Update button clicked');
+    console.log(name, description, price, image);
+  }
 }
 
 export default CreatePage
