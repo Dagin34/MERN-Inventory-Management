@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import '../index.css'
 import { useProductStore } from '../store/product';
-import avatar from '../components/Navbar';
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
@@ -14,20 +13,16 @@ const CreatePage = () => {
 
   const { createProduct } = useProductStore();
 
-  // const location = useLocation();
-  // const { name, description, price, image } = location.state || {};
-
-  // console.log(name, description, price, image);
-  // console.log(itemName, itemDescription, itemPrice, itemImage);
-
+  
   const handleAddProduct = async() => {
-    // console.log('Add product clicked');
-    // console.log(newProduct);
-
     const {success, message} = await createProduct(newProduct);
     console.log(success, message);
   }
+  
 
+  // const location = useLocation();
+  // const { name, description, price, image } = location.state || {};
+  // console.log(name, description, price, image);
   return (
     <>
       <div className='w-screen h-full text-center'>
@@ -78,11 +73,6 @@ const CreatePage = () => {
       </div>
     </>
   )
-
-  function updateButton() {
-    console.log('Update button clicked');
-    console.log(name, description, price, image);
-  }
 }
 
 export default CreatePage
