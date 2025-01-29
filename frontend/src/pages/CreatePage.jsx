@@ -47,7 +47,7 @@ const CreatePage = () => {
         <section className="flex justify-center items-start h-screen bg-gray-100">
           <div className="max-w-md w-full mt-12 dark:bg-white bg-secondary rounded-xl p-6 space-y-4 shadow-2xl ">
             <div className="mb-4">
-              <p className="text-accent font-black text-2xl text-center">Update Item</p>
+              <p className="text-accent font-black text-2xl text-center">Create Item</p>
               <h2 className="text-md font-normal text-sm dark:text-gray text-light-gray">Enter information below</h2>
             </div>
             <div>

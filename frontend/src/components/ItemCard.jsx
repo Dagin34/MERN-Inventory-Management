@@ -73,7 +73,7 @@ function ItemCard({ product }) {
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
-                className="bg-white p-6 rounded-lg shadow-lg w-[30%] max-xl:w-[70%] mx-auto justify-center items-center text-center space-y-2" 
+                className="bg-secondary dark:bg-white p-6 rounded-lg shadow-lg w-[30%] max-xl:w-[70%] mx-auto justify-center items-center text-center space-y-2" 
                 overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center backdrop-blur-sm">
                 <div className="mb-4">
                     <p className="text-accent font-black text-2xl text-center">Update Item</p>
