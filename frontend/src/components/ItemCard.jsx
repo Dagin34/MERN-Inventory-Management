@@ -48,8 +48,7 @@ function ItemCard({ product }) {
                     <div className="prod-info mt-0">
                         <div className="flex flex-col mx-4 md:flex-row justify-between items-center text-gray-900">
                             <p className="text-sm text-gray dark:text-gray-dark overflow-hidden text-ellipsis whitespace-nowrap">
-                                {/* {description} */}
-                                Mens Shoes
+                                {product.description}
                             </p>
                             <p className="text-sm text-gray dark:text-gray-dark font-bold">
                                 ${product.price}

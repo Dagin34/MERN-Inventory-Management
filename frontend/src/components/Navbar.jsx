@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { MdDarkMode } from "react-icons/md";
+import { FaBars } from "react-icons/fa6";
+import { FaXmark } from "react-icons/fa6";
+import { RiAccountCircleFill } from "react-icons/ri";
+
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = React.useState(true);
   const navigate = useNavigate();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prevState) => !prevState);
+  };
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -20,11 +29,11 @@ const Navbar = () => {
       <div className="flex flex-wrap w-screen">
         <section className="relative mx-auto">
           <nav className="flex justify-between bg-gray-900 text-white w-screen">
-            <div className="px-5 xl:px-12 py-6 flex w-full items-center">
+            <div className="px-12 py-6 flex w-full items-center">
               <a className="text-3xl font-bold font-heading text-accent" onClick={() => { navigate("/") }}>
                 Desired Shopping.
               </a>
-              <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+              <ul className="max-lg:hidden flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" onClick={() => { navigate("/") }}>Home</a></li>
                 <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" onClick={() => { navigate("/create") }}>Create</a></li>
                 <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" href="">Collections</a></li>
@@ -34,44 +43,33 @@ const Navbar = () => {
                 {/* <button onClick={toggleDarkMode} className="w-6 h-6 hover:bg-accent dark:hover:bg-accent bg-white dark:bg-primary rounded-lg font-bold">
                 </button> */}
                 <MdDarkMode className='dark:text-primary dark:hover:text-accent hover:text-accent text-light-gray text-3xl'
-                onClick={toggleDarkMode}/>
+                  onClick={toggleDarkMode} />
               </div>
             </div>
-            <a className="xl:hidden flex mr-6 items-center" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 hover:text-gray-200 dark:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              <span className="flex absolute -mt-5 ml-4 dark:text-primary"></span>
-              <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75 dark:text-primary"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500 dark:text-primary"></span>
-
-            </a>
-            <a className="navbar-burger self-center mr-12 xl:hidden dark:stroke-primary" href="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 hover:text-gray-200 stroke-current dark:stroke-primary"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </a>
+            <div className='flex justify-center'>
+              <a className="navbar-burger flex self-center mr-12 xl:hidden text-primary" href="#" onClick={toggleSidebar}>
+                <FaBars className='text-xl hover:text-tertiary' />
+              </a>
+            </div>
           </nav>
         </section >
       </div >
-      {/* <div className="absolute bottom-0 right-0 mb-4 mr-4 z-10">
-        <div>
-          <a title="Follow me on twitter" href="https://www.twitter.com/asad_codes" target="_blank" className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"></a>
-          <img className="object-cover object-center w-full h-full rounded-full" src="https://www.imore.com/sites/imore.com/files/styles/large/public/field/image/2019/12/twitter-logo.jpg" />
-
-        </div>
-      </div > */}
+      <div className={`fixed top-0 right-0 h-full bg-tertiary bg-secondary dark:bg-white w-1/3 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
+        <ul className="flex flex-col p-4 space-y-8">
+          <li className='flex justify-between items-center'>
+            <a className="text-3xl"><FaXmark className='cursor-pointer hover:text-secondary text-primary' onClick={toggleSidebar} /></a>
+          </li>
+          <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" onClick={() => { navigate("/") }}>Home</a></li>
+          <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" onClick={() => { navigate("/create") }}>Create</a></li>
+          <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" href="">Contact Us</a></li>
+          <li>
+            <a className='flex justify-start space-x-2'>
+              <MdDarkMode className='dark:text-primary dark:hover:text-accent hover:text-accent text-light-gray text-2xl'
+                onClick={toggleDarkMode} /> <span className='dark:text-primary dark:hover:text-accent hover:text-accent text-light-gray' onClick={toggleDarkMode}>Toggle Dark Mode</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }

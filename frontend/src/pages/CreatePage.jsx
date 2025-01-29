@@ -20,10 +20,9 @@ const CreatePage = () => {
 
   const handleAddProduct = async () => {
     const { success, message } = await createProduct(newProduct);
-    // console.log(success, message);
     if (success) {
       notify("Product added successfully.")
-      //.. reset the state
+      //.. Reset the state
       setNewProduct({
         name: '',
         description: '',
@@ -37,9 +36,6 @@ const CreatePage = () => {
     }
   };
 
-  // const location = useLocation();
-  // const { name, description, price, image } = location.state || {};
-  // console.log(name, description, price, image);
   return (
     <>
       <Toaster />
