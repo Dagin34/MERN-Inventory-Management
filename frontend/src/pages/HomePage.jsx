@@ -13,26 +13,9 @@ const HomePage = () => {
   
   console.log("Products", products);
 
-  // const products = [
-  //   {
-  //     "name": "Air Max 90",
-  //     "description": "Classic Nike Air Max 90 with a timeless design.",
-  //     "price": 120,
-  //     "image": AirMax80
-  //   },
-  //   {
-  //     "name": "Nike Dunk Low",
-  //     "description": "Classic Nike Dunk Low with a timeless design.",
-  //     "price": 240,
-  //     "image": NikeLowDunk
-  //   }
-  // ]
-
-  const isEmpty = false;
-
   return (
     <>
-      <div className='px-4 w-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
+      <div className='px-8 w-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
         {products.length === 0 ? (
           <div className="flex mx-auto justify-center text-center my-4 text-gray" >
             <p className="text-gray-500 text-lg ">No Products Found.</p>
@@ -41,11 +24,8 @@ const HomePage = () => {
         ) : (
           products.map((product) => (
             <ItemCard
-              key={product.name}
-              name={product.name}
-              description={product.description}
-              price={product.price}
-              image={product.image}
+              key={product._id}
+              product={product}
             />
           ))
 

@@ -2,8 +2,15 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import '../index.css'
 import { useProductStore } from '../store/product';
+import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const CreatePage = () => {
+  const { createProduct } = useProductStore();
+  const notify = (msg) => toast(msg);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
   const [newProduct, setNewProduct] = useState({
     name: '',
     description: '',
@@ -11,36 +18,11 @@ const CreatePage = () => {
     image: ''
   });
 
-  const { createProduct } = useProductStore();
-
-
-  // const handleAddProduct = async () => {
-  //   const { success, message } = await createProduct(newProduct);
-  //   console.log(success, message);
-  //   if (success) {
-  //     alert(message);
-  //     setNewProduct({
-  //       name: '',
-  //       description: '',
-  //       price: '',
-  //       image: ''
-  //     });
-  //   }
-
-  const [error, setError] = useState('');
-
-  const showError = (message) => {
-    setError(message);
-    setTimeout(() => {
-      setError('');
-    }, 5000);
-  };
-
   const handleAddProduct = async () => {
     const { success, message } = await createProduct(newProduct);
-    console.log(success, message);
+    // console.log(success, message);
     if (success) {
-      showError(message);
+      notify("Product added successfully.")
       //.. reset the state
       setNewProduct({
         name: '',
@@ -48,25 +30,19 @@ const CreatePage = () => {
         price: '',
         image: ''
       });
-      
+      navigate("/");
+
     } else {
-      showError(message);
+      notify(message)
     }
   };
-
-  {
-    error && (
-      <div className="fixed top-0 left-0 w-full bg-green-500 text-white text-center p-4">
-        {error}
-      </div>
-    )
-  }
 
   // const location = useLocation();
   // const { name, description, price, image } = location.state || {};
   // console.log(name, description, price, image);
   return (
     <>
+      <Toaster />
       <div className='w-screen h-full text-center'>
         <section className="flex justify-center items-start h-screen bg-gray-100">
           <div className="max-w-md w-full mt-12 dark:bg-white bg-secondary rounded-xl p-6 space-y-4 shadow-2xl ">
@@ -108,7 +84,6 @@ const CreatePage = () => {
                 onClick={handleAddProduct}>
                 Add Product
               </button>
-              <avatar />
             </div>
 
           </div>

@@ -24,7 +24,11 @@ export default {
       'light-gray': '#c6c6c6',
       'white': '#ffffff',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        "poppins": ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

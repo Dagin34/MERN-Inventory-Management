@@ -6,10 +6,12 @@ import HomePage from './pages/HomePage'
 import CreatePage from './pages/CreatePage'
 import Navbar from './components/Navbar'
 import './index.css'
+import '@fontsource/poppins';
+
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <div className='bg-primary text-white dark:bg-white h-screen'>
+    <div className='bg-primary text-white dark:bg-white h-screen font-poppins'>
       {document.documentElement.classList.add('dark')}
       <Navbar />
       <Routes>
