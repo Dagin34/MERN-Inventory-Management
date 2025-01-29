@@ -41,7 +41,7 @@ function ItemCard({ product }) {
                         className="prod-img w-full h-[320px] bg-fill bg-no-repeat bg-center rounded-xl">
                     </div>
                     <div className="prod-title mx-4 mt-2">
-                        <p className="text-xl text-light-gray dark:text-primary font-bold mb-4">
+                        <p className="text-xl text-light-gray dark:text-primary font-bold mb-4 overflow-hidden text-ellipsis whitespace-nowrap">
                             {product.name}
                         </p>
                     </div>

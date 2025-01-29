@@ -36,7 +36,6 @@ const Navbar = () => {
               <ul className="max-lg:hidden flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" onClick={() => { navigate("/") }}>Home</a></li>
                 <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" onClick={() => { navigate("/create") }}>Create</a></li>
-                <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" href="">Collections</a></li>
                 <li><a className="text-light-gray hover:text-accent dark:text-primary dark:hover:text-accent cursor-pointer" href="">Contact Us</a></li>
               </ul>
               <div className="heart hidden xl:flex items-center space-x-5">

@@ -13,7 +13,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className='px-8 w-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5'>
+      <div className='px-8 w-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
         {products.length === 0 ? (
           <div className="flex mx-auto justify-center text-center my-4 text-gray" >
             <p className="text-gray-500 text-lg ">No Products Found.</p>
