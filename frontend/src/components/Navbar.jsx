@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="flex flex-wrap w-screen">
         <section className="relative mx-auto">
           <nav className="flex justify-between bg-gray-900 text-white w-screen">
-            <div className="px-12 py-6 flex w-full items-center">
+            <div className="px-12 max-md:px-2 py-6 flex w-full items-center">
               <a className="text-3xl font-bold font-heading text-accent" onClick={() => { navigate("/") }}>
                 Desired Shopping.
               </a>
@@ -45,8 +45,8 @@ const Navbar = () => {
                   onClick={toggleDarkMode} />
               </div>
             </div>
-            <div className='flex justify-center'>
-              <a className="navbar-burger flex self-center mr-12 xl:hidden text-primary" href="#" onClick={toggleSidebar}>
+            <div className='flex justify-end'>
+              <a className="navbar-burger flex self-center mr-4 xl:hidden text-primary" href="#" onClick={toggleSidebar}>
                 <FaBars className='text-xl hover:text-tertiary' />
               </a>
             </div>
