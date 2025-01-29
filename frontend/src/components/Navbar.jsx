@@ -53,7 +53,7 @@ const Navbar = () => {
           </nav>
         </section >
       </div >
-      <div className={`fixed top-0 right-0 h-full bg-tertiary bg-secondary dark:bg-white w-1/3 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
+      <div className={`fixed top-0 right-0 h-full bg-tertiary bg-secondary dark:bg-white w-3/5 max-sm:w-full  transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
         <ul className="flex flex-col p-4 space-y-8">
           <li className='flex justify-between items-center'>
             <a className="text-3xl"><FaXmark className='cursor-pointer hover:text-secondary text-primary' onClick={toggleSidebar} /></a>
