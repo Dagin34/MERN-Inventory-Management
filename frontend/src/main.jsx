@@ -10,6 +10,7 @@ import './index.css'
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <div className='bg-primary text-white dark:bg-white h-screen'>
+      {document.documentElement.classList.add('dark')}
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

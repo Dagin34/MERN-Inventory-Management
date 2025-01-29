@@ -13,12 +13,54 @@ const CreatePage = () => {
 
   const { createProduct } = useProductStore();
 
-  
-  const handleAddProduct = async() => {
-    const {success, message} = await createProduct(newProduct);
+
+  // const handleAddProduct = async () => {
+  //   const { success, message } = await createProduct(newProduct);
+  //   console.log(success, message);
+  //   if (success) {
+  //     alert(message);
+  //     setNewProduct({
+  //       name: '',
+  //       description: '',
+  //       price: '',
+  //       image: ''
+  //     });
+  //   }
+
+  const [error, setError] = useState('');
+
+  const showError = (message) => {
+    setError(message);
+    setTimeout(() => {
+      setError('');
+    }, 5000);
+  };
+
+  const handleAddProduct = async () => {
+    const { success, message } = await createProduct(newProduct);
     console.log(success, message);
+    if (success) {
+      showError(message);
+      //.. reset the state
+      setNewProduct({
+        name: '',
+        description: '',
+        price: '',
+        image: ''
+      });
+      
+    } else {
+      showError(message);
+    }
+  };
+
+  {
+    error && (
+      <div className="fixed top-0 left-0 w-full bg-green-500 text-white text-center p-4">
+        {error}
+      </div>
+    )
   }
-  
 
   // const location = useLocation();
   // const { name, description, price, image } = location.state || {};
@@ -56,6 +98,7 @@ const CreatePage = () => {
             <div>
               <input className="w-full p-4 text-md dark:bg-[#f3f3f3] focus:outline-none rounded-lg text-gray-light bg-primary dark:text-primary dark:border-[1px] border-gray-light focus:border-primary"
                 type="text"
+                href="/home"
                 placeholder="Image URL"
                 defaultValue={newProduct.image}
                 onChange={(e) => { setNewProduct({ ...newProduct, image: e.target.value }) }} />
