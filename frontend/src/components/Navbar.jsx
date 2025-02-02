@@ -47,7 +47,7 @@ const Navbar = () => {
             </div>
             <div className='flex justify-end'>
               <a className="navbar-burger flex self-center mr-4 xl:hidden text-primary" href="#" onClick={toggleSidebar}>
-                <FaBars className='text-xl hover:text-tertiary dark:text-primary dark:hover:text-accent hover:text-accent text-light-gray' />
+                <FaBars className='text-xl dark:text-primary dark:hover:text-accent hover:text-accent text-light-gray' />
               </a>
             </div>
           </nav>
