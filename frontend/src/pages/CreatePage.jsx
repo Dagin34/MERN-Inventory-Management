@@ -39,7 +39,7 @@ const CreatePage = () => {
   return (
     <>
       <Toaster />
-      <div className='w-screen h-full text-center'>
+      <div className='w-screen h-full text-center bg-primary text-white dark:bg-white dark:text-primary'>
         <section className="flex justify-center items-start h-screen bg-gray-100">
           <div className="max-w-md w-full mt-12 dark:bg-white bg-secondary rounded-xl p-6 space-y-4 shadow-2xl ">
             <div className="mb-4">

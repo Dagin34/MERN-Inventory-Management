@@ -11,7 +11,7 @@ import '@fontsource/poppins';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <div className='bg-primary text-white dark:bg-white h-screen font-poppins'>
+    <div className='bg-primary text-white dark:bg-white dark:text-primary h-screen font-poppins'>
       {document.documentElement.classList.add('dark')}
       <Navbar />
       <Routes>
